@@ -52,7 +52,7 @@ class ViewController: UIViewController, WebSocketDelegate{
                 if let dataArray = data as? [[String: Any]] {
                     for item in dataArray {
                         if let author = item["author"] as? String, let text = item["text"] as? String {
-                            history += "\(author): \(text)\n"
+                            history += "[\(author)]: \(text)\n"
                         }
                     }
                 }
@@ -63,7 +63,7 @@ class ViewController: UIViewController, WebSocketDelegate{
                 
                 if let dataDict = data as? [String: Any] {
                     if let author = dataDict["author"] as? String, let text = dataDict["text"] as? String {
-                        self.content.text! += "\(author): \(text)\n"
+                        self.content.text! += "[\(author)]: \(text)\n"
                     }
                 }
                 break
