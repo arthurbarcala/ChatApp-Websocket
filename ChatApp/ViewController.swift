@@ -29,7 +29,7 @@ class ViewController: UIViewController, WebSocketDelegate{
         case .connected(let headers):
             isConnected = true
             print("websocket is connected: \(headers)")
-            self.content.text = "Connected to Websocket 😊"
+            self.content.text = "Connected to Websocket 😊\n"
         case .disconnected(let reason, let code):
             isConnected = false
             print("websocket is disconnected: \(reason) with code: \(code)")
@@ -68,7 +68,6 @@ class ViewController: UIViewController, WebSocketDelegate{
                 }
                 break
             default:
-                self.content.text = ""
                 break
             }
             
